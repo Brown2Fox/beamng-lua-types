@@ -1,0 +1,41 @@
+---@meta
+---@diagnostic disable: missing-fields -- Engine object declarations without implementations.
+-- Source: vehicle/controller.lua. Optional controller capabilities also cover driveModes, esc and drivingDynamics supervisors.
+
+---@class BeamNGController
+---@field engineInfo? table<integer, number|string>
+---@field serialize? fun(): BeamNGControllerState?
+---@field getCurrentDriveModeKey? fun(): string
+---@field getDriveModeData? fun(key: string): BeamNGDriveMode?
+---@field getCurrentConfigData? fun(): BeamNGESCConfiguration
+---@field getConfig? fun(): {isEnabled: boolean}
+---@field isActive? boolean
+---@field isActingAsABS? boolean
+---@field nextESCMode? fun()
+---@field previousESCMode? fun()
+---@field toggleESCMode? fun()
+---@field nextDriveMode? fun()
+---@field previousDriveMode? fun()
+---@field name? string
+---@field typeName? string
+---@field type? string
+---@field defaultOrder? number
+---@field init? fun(jbeamData: table)
+---@field initSecondStage? fun(jbeamData: table)
+---@field initLastStage? fun(jbeamData: table)
+---@field reset? fun(jbeamData: table)
+---@field update? fun(dt: number)
+---@field updateGFX? fun(dt: number)
+---@field updateFixedStep? fun(dt: number)
+---@field beamBroke? fun(beamId: integer, energy: number)
+---@field beamDeformed? fun(beamId: integer, ratio: number)
+
+---@class BeamNGControllerManager
+---@field mainController? BeamNGController
+---@field getController fun(name: string): BeamNGController?
+---@field getAllControllers fun(): table<string, BeamNGController>
+---@field getControllersByType fun(typeName: string): BeamNGController[]
+---@field getControllerSafe fun(name: string): table<string, any> # Returns a placeholder if the controller is missing.
+
+---@type BeamNGControllerManager
+controller = {}

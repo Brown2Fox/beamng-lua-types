@@ -1,0 +1,11 @@
+---@meta
+
+-- Hook sources: ge/main.lua and ge/extensions/core/camera.lua.
+---@class BeamNGGEExtension: BeamNGExtension
+---@field onCameraReset? fun()
+---@field onMouseLocked? fun(locked: boolean) # Called when the mouse lock state changes.
+---@field onClientStartMission? fun(levelPath: string)
+---@field onClientEndMission? fun(levelPath: string)
+---@field onVehicleSpawned? fun(vehicleId: integer)
+---@field onVehicleResetted? fun(vehicleId: integer)
+---@field onVehicleSwitched? fun(oldVehicleId: integer, newVehicleId: integer, player: integer)

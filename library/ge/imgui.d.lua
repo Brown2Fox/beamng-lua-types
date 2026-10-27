@@ -1,0 +1,100 @@
+---@meta
+---@diagnostic disable: missing-fields
+
+-- Sources: common/extensions/ui/imgui_luaintf.lua and
+-- common/extensions/ui/imgui_custom_luaintf.lua.
+-- Draw lists and texture IDs are opaque native handles.
+-- Pointer helpers are modeled as tables indexed from zero; flags are numeric.
+---@class BeamNGImVec2
+---@field x number
+---@field y number
+
+---@class BeamNGImVec4: BeamNGImVec2
+---@field z number
+---@field w number
+
+---@class BeamNGImDrawList
+
+---@class BeamNGImTextureID
+
+---@class BeamNGImGuiViewport
+---@field Pos BeamNGImVec2
+---@field Size BeamNGImVec2
+
+---@alias BeamNGBoolPtr table<integer, boolean>
+---@alias BeamNGFloatPtr table<integer, number>
+
+---@class BeamNGImGui
+---@field Col_Text integer
+---@field Text fun(fmt: string, ...: string|number)
+---@field TextDisabled fun(fmt: string, ...: string|number)
+---@field PushStyleColor2 fun(index: integer, color: BeamNGImVec4)
+---@field PopStyleColor fun(count?: integer)
+---@field GetContentRegionAvail fun(): BeamNGImVec2
+---@field GetCursorScreenPos fun(): BeamNGImVec2
+---@field GetCursorPosX fun(): number
+---@field SetCursorPosX fun(x: number)
+---@field Dummy fun(size: BeamNGImVec2)
+---@field IsItemHovered fun(flags?: integer): boolean
+---@field IsMouseClicked fun(button: integer, repeatClick?: boolean): boolean
+---@field CollapsingHeader1 fun(label: string, flags?: integer): boolean
+---@field TableToArrayFloat fun(values: number[]): number[]
+---@field GetLengthArrayFloat fun(values: number[]): integer
+---@field PlotLines1 fun(label: string, values: number[], count: integer, offset?: integer, overlay?: string, scaleMin?: number, scaleMax?: number, size?: BeamNGImVec2, stride?: integer)
+---@field BoolPtr fun(value: boolean): BeamNGBoolPtr
+---@field FloatPtr fun(value: number): BeamNGFloatPtr
+---@field ImVec2 fun(x?: number, y?: number): BeamNGImVec2
+---@field ImVec4 fun(x?: number, y?: number, z?: number, w?: number): BeamNGImVec4
+---@field Begin fun(name: string, p_open?: BeamNGBoolPtr, flags?: integer): boolean
+---@field BeginTabBar fun(str_id: string, flags?: integer): boolean
+---@field BeginTabItem fun(label: string, p_open?: BeamNGBoolPtr, flags?: integer): boolean
+---@field Button fun(label: string, size?: BeamNGImVec2): boolean
+---@field Checkbox fun(label: string, v: BeamNGBoolPtr): boolean
+---@field Cond_Always integer
+---@field Cond_FirstUseEver integer
+---@field Cond_Once integer
+---@field End fun()
+---@field EndTabBar fun()
+---@field EndTabItem fun()
+---@field GetColorU322 fun(col: BeamNGImVec4): integer
+---@field GetMainViewport fun(): BeamNGImGuiViewport
+---@field GetWindowDrawList fun(): BeamNGImDrawList
+---@field GetWindowPos fun(): BeamNGImVec2
+---@field ImDrawList_AddCircleFilled fun(ctx: BeamNGImDrawList, center: BeamNGImVec2, radius: number, col: integer, num_segments?: integer)
+---@field ImDrawList_AddImage fun(ctx: BeamNGImDrawList, user_texture_id: BeamNGImTextureID, p_min: BeamNGImVec2, p_max: BeamNGImVec2, uv_min?: BeamNGImVec2, uv_max?: BeamNGImVec2, col?: integer)
+---@field ImDrawList_AddLine fun(ctx: BeamNGImDrawList, p1: BeamNGImVec2, p2: BeamNGImVec2, col: integer, thickness?: number)
+---@field ImDrawList_AddQuadFilled fun(ctx: BeamNGImDrawList, p1: BeamNGImVec2, p2: BeamNGImVec2, p3: BeamNGImVec2, p4: BeamNGImVec2, col: integer)
+---@field ImDrawList_AddRectFilled fun(ctx: BeamNGImDrawList, p_min: BeamNGImVec2, p_max: BeamNGImVec2, col: integer, rounding?: number, flags?: integer)
+---@field ImDrawList_AddTriangleFilled fun(ctx: BeamNGImDrawList, p1: BeamNGImVec2, p2: BeamNGImVec2, p3: BeamNGImVec2, col: integer)
+---@field ImDrawList_PathArcTo fun(ctx: BeamNGImDrawList, center: BeamNGImVec2, radius: number, a_min: number, a_max: number, num_segments?: integer)
+---@field ImDrawList_PathStroke fun(ctx: BeamNGImDrawList, col: integer, flags?: integer, thickness?: number)
+---@field InvisibleButton fun(str_id: string, size: BeamNGImVec2, flags?: integer): boolean
+---@field PopStyleVar fun(count?: integer)
+---@field PushStyleVar2 fun(idx: integer, val: BeamNGImVec2)
+---@field RadioButton1 fun(label: string, active: boolean): boolean
+---@field SameLine fun(offset_from_start_x?: number, spacing?: number)
+---@field Separator fun()
+---@field SetCursorScreenPos fun(pos: BeamNGImVec2)
+---@field SetNextWindowBgAlpha fun(alpha: number)
+---@field SetNextWindowPos fun(pos: BeamNGImVec2, cond?: integer, pivot?: BeamNGImVec2)
+---@field SetNextWindowSize fun(size: BeamNGImVec2, cond?: integer)
+---@field SliderFloat fun(label: string, v: BeamNGFloatPtr, v_min: number, v_max: number, format?: string, flags?: integer): boolean
+---@field Spacing fun()
+---@field StyleVar_WindowMinSize integer
+---@field StyleVar_WindowPadding integer
+---@field TextUnformatted fun(text: string, text_end?: string)
+---@field TextWrapped fun(fmt: string, ...: string|number)
+---@field WindowFlags_NoBackground integer
+---@field WindowFlags_NoBringToFrontOnFocus integer
+---@field WindowFlags_NoCollapse integer
+---@field WindowFlags_NoFocusOnAppearing integer
+---@field WindowFlags_NoInputs integer
+---@field WindowFlags_NoMove integer
+---@field WindowFlags_NoNav integer
+---@field WindowFlags_NoResize integer
+---@field WindowFlags_NoScrollWithMouse integer
+---@field WindowFlags_NoScrollbar integer
+---@field WindowFlags_NoTitleBar integer
+
+---@type BeamNGImGui
+ui_imgui = {}

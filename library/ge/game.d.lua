@@ -4,6 +4,7 @@
 -- Native object subsets inferred from calls in ge/ge_utils.lua and
 -- ge/extensions/core/camera.lua. Not complete engine class definitions.
 ---@class BeamNGVehicle
+---@field getNodePosition fun(self: BeamNGVehicle, node: integer): BeamNGVec3
 ---@field getID fun(self: BeamNGVehicle): integer
 ---@field getId fun(self: BeamNGVehicle): integer
 ---@field queueLuaCommand fun(self: BeamNGVehicle, source: string)

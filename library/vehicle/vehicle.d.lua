@@ -18,5 +18,11 @@
 ---@field getGroundSpeed fun(self: BeamNGVehicleObject): number
 ---@field queueGameEngineLua fun(self: BeamNGVehicleObject, source: string)
 
+---@field createSFXSource2 fun(self: BeamNGVehicleObject, event: string, profile: string, name: string, node: integer, flags: integer): integer
+---@field setVolume fun(self: BeamNGVehicleObject, source: integer, volume: number)
+---@field playSFX fun(self: BeamNGVehicleObject, source: integer)
+---@field stopSFX fun(self: BeamNGVehicleObject, source: integer)
+---@field addParticleByNodes fun(self: BeamNGVehicleObject, node1: integer, node2: integer, velocity: number, particleType: integer, radius?: number, count?: number)
+
 ---@type BeamNGVehicleObject
 obj = {}

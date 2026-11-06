@@ -25,3 +25,7 @@ scenetree = {}
 ---@param className string
 ---@return BeamNGSceneObject
 function createObject(className) end
+
+-- Source: ge/server/server.lua; loads material and particle datablock JSON.
+---@param path string
+function loadJsonMaterialsFile(path) end

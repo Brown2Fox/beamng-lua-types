@@ -42,7 +42,7 @@
 wheels = {}
 
 -- Source: vehicle/main.lua.
----@type {firstPlayerSeated: boolean}
+---@type {firstPlayerSeated: boolean, anyPlayerSeated: boolean}
 playerInfo = {}
 -- Source: vehicle/beamstate.lua.
 ---@type {damage: number}
@@ -70,6 +70,7 @@ v = {}
 ---@class BeamNGJBeamData: table<string, table>
 ---@field wheels table<integer, BeamNGJBeamWheel>
 ---@field input BeamNGVehicleInputConfig
+---@field thrusters? table<integer, BeamNGThruster>
 
 ---@class BeamNGHydro
 ---@field inputSource string
@@ -86,3 +87,12 @@ hydros = {}
 -- Source: vehicle/input.lua (JBeam input settings).
 ---@class BeamNGVehicleInputConfig
 ---@field steeringWheelLock? number
+
+
+-- Source: vehicle/thrusters.lua; node references are resolved by JBeam.
+---@class BeamNGThruster
+---@field id1 integer
+---@field id2 integer
+---@field control string
+---@field factor? number
+---@field thrustLimit? number

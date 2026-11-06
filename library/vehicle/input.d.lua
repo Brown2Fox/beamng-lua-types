@@ -16,6 +16,9 @@ FILTER_AI = 'FILTER_AI'
 ---@alias BeamNGInputEvent fun(name: string, value: number, filter: integer|string, angle?: number, lockType?: integer, osClockHP?: number, source?: string)
 
 ---@class BeamNGInput
+---@field throttle number
+---@field brake number
+---@field steering number
 ---@field updateGFX fun(dt: number)
 ---@field event BeamNGInputEvent
 ---@field toggleEvent fun(name: string)

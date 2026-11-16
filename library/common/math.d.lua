@@ -100,6 +100,13 @@ function clamp(value, minValue, maxValue) end
 ---@return number
 function lerp(from, to, t) end
 
+---Returns the fraction along the interval without clamping, or zero for a near-zero span.
+---@param from number
+---@param to number
+---@param value number
+---@return number
+function inverseLerp(from, to, value) end
+
 ---@param value number
 ---@param minValue number
 ---@param maxValue number

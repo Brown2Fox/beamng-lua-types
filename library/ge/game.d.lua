@@ -42,3 +42,8 @@ function getObjectByID(id) end
 
 ---@return BeamNGVehicle[]
 function getAllVehicles() end
+
+---Returns vehicles whose model Type matches an entry; defaults to Car, Truck, Automation and Traffic.
+---@param typeList? string[]
+---@return BeamNGVehicle[]
+function getAllVehiclesByType(typeList) end

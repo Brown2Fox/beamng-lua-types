@@ -101,3 +101,24 @@ function arrayFindValueIndex(values, value) end
 ---@param target? K[]
 ---@return K[]
 function tableKeys(values, target) end
+
+---Returns the sorted keys, reusing target when supplied.
+---@generic K, V
+---@param values table<K, V>
+---@param target? K[]
+---@return K[]
+function tableKeysSorted(values, target) end
+
+---Returns a matching key, or nil if the value is absent.
+---@generic K, V
+---@param values table<K, V>
+---@param value V
+---@return K?
+function tableFindKey(values, value) end
+
+---Merges nested tables into destination. Array entries are merged by index.
+---@generic T: table
+---@param destination T
+---@param source table
+---@return T
+function tableMergeRecursive(destination, source) end

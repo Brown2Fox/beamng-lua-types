@@ -48,7 +48,8 @@ playerInfo = {}
 ---@type {damage: number}
 beamstate = {}
 -- Source: vehicle/sensors.lua.
----@type {gx: number, gy: number, gz: number}
+---The gx2, gy2 and gz2 signals are the smoothed acceleration components.
+---@type {gx: number, gy: number, gz: number, gx2: number, gy2: number, gz2: number}
 sensors = {}
 
 -- Sources: vehicle/main.lua and vehicle/controller/esc.lua; partial vehicle data.
